@@ -20,4 +20,5 @@ def index():
 
 @app.get('/nlp')
 def get_businessinfo(businessname:str):
-    return os.getcwd()
+    res = get_businessdata(businessname)
+    return res
