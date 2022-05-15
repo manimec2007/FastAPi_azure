@@ -13,7 +13,7 @@ cols = ['BusinessName', 'isWomenOwned', 'OwnershipType', 'DiverseType','LeaderNa
 def get_businessdata(text):
     ndf = pd.DataFrame(columns=cols)
     for i in j:
-        if i[0] == "Ergonomic Group Inc.":
+        if i[0] == text:
             tmp=pd.DataFrame([i],columns=cols)
             ndf = ndf.append(tmp,ignore_index = True)
 
