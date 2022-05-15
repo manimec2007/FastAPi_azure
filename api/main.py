@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
 
-df = pd.read_csv('data/nlpdata.csv')
+df = pd.read_csv('/home/data/nlpdata.csv')
 
 def get_businessdata(businessname):
     tmp = df[df.BusinessName == BusinessName]
