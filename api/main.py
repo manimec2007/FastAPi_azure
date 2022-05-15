@@ -5,7 +5,7 @@ from pydantic import BaseModel
 import pandas as pd
 import os
 
-df = pd.read_csv('data/nlpdata.csv')
+df = pd.read_csv('/home/data/nlpdata.csv')
 
 def get_businessdata(businessname):
     tmp = df[df.BusinessName == BusinessName]
