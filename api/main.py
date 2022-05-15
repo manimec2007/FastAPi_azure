@@ -3,8 +3,9 @@ from typing import Optional
 from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
+import os
 
-df = pd.read_csv('/home/data/nlpdata.csv')
+df = pd.read_csv('../data/nlpdata.csv')
 
 def get_businessdata(businessname):
     tmp = df[df.BusinessName == BusinessName]
@@ -19,5 +20,4 @@ def index():
 
 @app.get('/nlp')
 def get_businessinfo(businessname:str):
-    res = get_businessdata(businessname)
-    return res
+    return os.getcwd()
