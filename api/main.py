@@ -10,7 +10,7 @@ j = [["Park Avenue Building & Roofing Supplies, LLC",0,"HISPANIC","MBE","BOB GRO
 cols = ['BusinessName', 'isWomenOwned', 'OwnershipType', 'DiverseType','LeaderName', 'Designation']
 
 
-s = '''{
+j = """{
 "company":"the natori company",
 
 "profile":[
@@ -23,7 +23,7 @@ s = '''{
 		  "score":"0.87",
 		  "link":"https://media-exp1.licdn.com/dms/image/C4E03AQGPYzZVTglO3w/profile-displayphoto-shrink_400_400/0/1516176053249?e=1659571200&v=beta&t=xs3RrMAY80cfUXyUCEQJCdm04AG9389-I1dk9K2dYH0"
 		  }],
-}
+
 "name":[{"value":"josie natori",
 		"score":"1.0",
 		"link":"https://en.wikipedia.org/wiki/Josie_Natori"
@@ -58,7 +58,7 @@ s = '''{
 		"link":"unknown"
 		}],
 "gender":["F","M"],
-"maritalstatus":["married""married"],
+"maritalstatus":["married","married"],
 "race":["black","white"],
 "ethnicity":["filipino","filipino"],
 "education":["economics","phd"],
@@ -67,7 +67,7 @@ s = '''{
 "disability":["",""],
 "iswomenowned":["Yes","Yes"],
 "diversity":["pacific","pacific"]
-}'''
+}"""
 
 
 def get_businessdata(text):
@@ -76,7 +76,8 @@ def get_businessdata(text):
         if i[0] == text:
             tmp=pd.DataFrame([i],columns=cols)
             ndf = ndf.append(tmp,ignore_index = True)
-    return s
+    data = json.loads(j)
+    return data
   
 
 app = FastAPI()
