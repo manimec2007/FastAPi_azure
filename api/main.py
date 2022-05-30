@@ -10,7 +10,7 @@ j = [["Park Avenue Building & Roofing Supplies, LLC",0,"HISPANIC","MBE","BOB GRO
 cols = ['BusinessName', 'isWomenOwned', 'OwnershipType', 'DiverseType','LeaderName', 'Designation']
 
 
-j = """{
+s = """{
 "company":"the natori company",
 
 "profile":[
@@ -71,12 +71,7 @@ j = """{
 
 
 def get_businessdata(text):
-    ndf = pd.DataFrame(columns=cols)
-    for i in j:
-        if i[0] == text:
-            tmp=pd.DataFrame([i],columns=cols)
-            ndf = ndf.append(tmp,ignore_index = True)
-    data = json.loads(j)
+    data = json.loads(s)
     return data
   
 
